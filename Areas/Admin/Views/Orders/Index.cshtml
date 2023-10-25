@@ -1,0 +1,49 @@
+﻿@model List<Order>
+
+
+<div class="container" style="position: absolute; top: 100px">
+<h1 class="name col-md-4 offset-md-2 ">Order List</h1>
+<br />
+<table class="table col-md-4 offset-md-2" style="border: 2px solid black; text-align: center">
+    <thead style="color: #fff;padding: 8px; background-color: #888; border: 2px solid black">
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody style=" border: 2px solid black; padding: 8px">
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.UserName</td>
+                <td>@order.PhoneNumber</td>
+                <td>@order.Address</td>
+                <td>
+                    <a class="confirmDeletion" asp-controller="Orders" asp-action="Delete" asp-route-id="@order.Id">Delete</a> |
+                    <a asp-action="Details" asp-route-id="@order.Id">Details</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+@section Scripts{
+    <script>
+        $(function () {
+            if ($("a.confirmDeletion").length) {
+                $("a.confirmDeletion").click(() => {
+                    if (!confirm("Confirm deletion")) return false;
+                });
+            }
+            if ($("div.alert.notification").length) {
+                setTimeout(() => {
+                    $("div.alert.notification").fadeOut();
+                }, 2000);
+            }
+        });
+    </script>
+}

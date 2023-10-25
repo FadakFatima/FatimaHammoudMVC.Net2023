@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Page>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container" style="position: absolute; top: 100px">
+
+<h1 class="col-md-4 offset-md-2">Index</h1>
+
+<p>
+    <a asp-action="Create" class="col-md-4 offset-md-2">Create New</a>
+</p>
+
+<table class="table sorting col-md-4 offset-md-2" style="border: 2px solid black; text-align: center" id="pages">
+    <thead style="color: #fff;padding: 8px; background-color: #888; border: 2px solid black">
+        <tr class="home">
+            <th>
+               Title
+            </th>
+            <th>
+                Slug
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style=" border: 2px solid black; padding: 8px">
+    @foreach (var item in Model) {
+        <tr id="id_@item.Id" class="@item.Slug">
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Slug
+            </td>
+            <td> 
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    @if (item.Slug != "home")
+                    {
+                       <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+            </td> 
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+@section Scripts {
+    <script>
+      $("table#pages tbody").sortable({
+          items: "tr:not(.home)",
+          placeholder: "ui-state-highlight",
+          update: function(){
+              let ids = $("table#pages tbody").sortable("serialize");
+              let url = "/admin/pages/reorder";
+
+              $.post(url, ids, function() {});
+          }
+      })
+        $(function () {
+            if ($("a.confirmDeletion").length) {
+                $("a.confirmDeletion").click(() => {
+                    if (!confirm("Confirm deletion")) return false;
+                });
+            }
+            if ($("div.alert.notification").length) {
+                setTimeout(() => {
+                    $("div.alert.notification").fadeOut();
+                }, 2000);
+            }
+        });
+    </script>
+}
+

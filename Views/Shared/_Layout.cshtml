@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CmsShoppingCart</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/prof.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <style>
+        .profile {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .profile-info {
+            cursor: pointer;
+        }
+
+        .popup-card {
+            display: none;
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color:gray;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width:200px;
+            border-radius: 10px;
+        }
+        .popup-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+        .popup-card.show {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-top box-shadow mb-3">
+            <div class="container">
+                <div class="name">
+                <img class="logo mr-5" width="120" height="120" src="~/images/logo2.png" />
+                    <!--<a class="navbar-brand text-light" asp-area="" asp-controller="Products" asp-action="Index">CmsShoppingCart</a>-->
+                </div>
+                <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-light"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if(User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="justify-content-end mt-4 mr-1">
+                                <form asp-controller="Products" asp-action="Search" method="get">
+                                    <input type="text" style="width: 150px; height: 30px" name="searchTerm" placeholder="Search...">
+                                    <button class="gray-button rounded" type="submit">Search</button>
+                                </form>
+                            </li>
+
+                            <div class="profile">
+                                <img src="~/images/img.jpg" alt="Profile Picture" id="profile-picture" style="width:100px; height:100px; border-radius: 50%">
+                            </div>
+                            <div class="popup-card" id="profile-card">
+                                <div class="profile-info">
+                                    <span id="close-button" class="close-button">X</span>
+                                    <img src="~/images/img.jpg" alt="Profile Picture" style="width:100px; height:100px">
+                                    <h1>@User.Identity.Name</h1>
+                                    <ul>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Edit" class="btn">Account</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Logout" class="btn ">
+                                                LogOut
+                                            </a>
+                                        </li>
+                                        @if (User.IsInRole("admin") || User.IsInRole("editor"))
+                                        {
+                                            <li class="nav-item mt-1 mr-1">
+                                                <a asp-area="Admin" asp-controller="Pages" asp-action="Index" class="btn">
+                                                    AdminArea
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                        
+                        else
+                        {
+                            <li class="nav-item">
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-success">
+                                Log in
+                            </a>
+                            </li>
+                            <li class="nav-item ml-1">
+                                <a asp-controller="Account" asp-action="Register" class="btn btn-primary">
+                                    Register
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                       @await Component.InvokeAsync("MainMenu")
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <partial name="_NotificationPartial" />
+            <div class="row">
+                <div class="col-3">
+                    @await Component.InvokeAsync("Categories")
+                    <div class="smallcart  mt-3 p-3 text-white">
+                        @await Component.InvokeAsync("SmallCart")
+                    </div>
+
+                </div>
+                <div class="col"">
+                    @RenderBody()
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - CmsShoppingCart - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        const profilePicture = document.getElementById("profile-picture");
+        const profileCard = document.getElementById("profile-card");
+        const closeButton = document.getElementById("close-button");
+
+        profilePicture.addEventListener("click", function () {
+            profileCard.style.display = "block";
+        });
+
+        closeButton.addEventListener("click", function () {
+            profileCard.style.display = "none";
+        });
+
+    </script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    
+</body>
+</html>

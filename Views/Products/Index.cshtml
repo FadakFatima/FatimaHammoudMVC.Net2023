@@ -1,0 +1,190 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Products";
+}
+<style>
+    .custom-card {
+        width: 300px;
+        height: 500px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid black;
+    }
+</style>
+
+<h1 class="display-4 pb-5">All Products</h1>
+
+<div class="row">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="btn-group mb-3">
+                <label class="mr-2 mt-1">Sort by: </label>
+                <a href="/products?categorySlug=@ViewBag.CategorySlug&sortOrder=price_asc" class="gray-button rounded mr-2">Price Ascending</a>
+                <a href="/products?categorySlug=@ViewBag.CategorySlug&sortOrder=price_desc" class="gray-button rounded">Price Descending</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="card custom-card">
+                    <div class="ajaxbg d-none">
+                        <img src="~/images/ajax.gif" />
+                        <p class="lead alert alert-success text-center d-none">
+                            The product has been added!
+                        </p>
+
+                    </div>
+                    <img src="~/media/products/@item.Image" class="card-img-top" alt="" />
+                    <div class="card-body">
+                        <form>
+                            @if (item.OnSale)
+                            {
+                                <img src="~/images/sale.png" style="width:50px ; height: 50px; float:right">
+                            }
+                            <h4>
+                                @item.Name
+                            </h4>
+                           
+                        </form>
+                        <div>
+                            @Html.Raw(item.Description)
+                        </div>
+                        <p>
+                            @item.Price.ToString("C2")
+                        </p>
+                          
+                        <p>
+                            <a asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id" class="gray-button rounded">
+                                Add to cart
+                            </a>
+                            <button type="button" class="gray-button rounded discount-button" data-bs-toggle="modal" data-bs-target="#discountModal" data-product-id="@item.Id" data-product-price="@item.Price">
+                                Discount
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <form>
+                    <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="discountModalLabel">Product Details</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/discountContent" method="post">
+                                        <input type="hidden" id="product-id" value="1">
+                                        <input type="hidden" id="product-price">
+                                        <p>Product Price:$ <span id="product-price-display"></span> </p>
+                                        <label for="discount-code-input">Enter Discount Code:</label>
+                                        <input type="text" id="discount-code-input">
+                                        <button type="submit" class="apply-discount-button gray-button rounded" data-id="@item.Id" >Add to Cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+
+    @if (ViewBag.TotalPages > 1)
+    {
+        <div class="d-flex w-100 justify-content-center">
+            <pagination page-count="@ViewBag.TotalPages"
+                        page-target="/products/@ViewBag.CategorySlug"
+                        page-number="@ViewBag.PageNumber"
+                        page-range="@ViewBag.PageRange"></pagination>
+        </div>
+    }
+
+
+</div>
+
+@section Scripts{
+    <script>   
+        
+        $(function () {
+
+            $("a.addToCart").click(function (e) {
+                e.preventDefault();
+
+                let ajaxDiv = $(this).parent().parent().find("div.ajaxbg");
+                ajaxDiv.removeClass("d-none");
+                let id = $(this).data("id");
+
+                $.get('/cart/add/' + id, {}, function (data) {
+                    $("div.smallcart").html(data);
+                    ajaxDiv.find("img").addClass("d-none");
+                    ajaxDiv.find("p").removeClass("d-none");
+                    setTimeout(() => {
+                        ajaxDiv.animate({ opacity: 0 }, function () {
+                            $(this).addClass("d-none").fadeTo(.1, 1);
+                            $(this).find("img").removeClass("d-none");
+                            $(this).find("p").addClass("d-none");
+                        });
+                    });
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $(".discount-button").on("click", function () {
+                var productId = $(this).data("product-id");
+                var productPrice = $(this).data("product-price");
+
+                // Update the modal content with the correct product details
+                $("#product-id").val(productId);
+                $("#product-price").val(productPrice);
+                $("#product-price-display").text(productPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+            });
+        });
+
+        $(function () {
+            $(".apply-discount-button").on("click", function () {
+                var discountCode = $("#discount-code-input").val();
+                var productPriceElement = $(this).parent().find(".product-price");
+                var originalPrice = parseFloat(productPriceElement.text().replace(/\D/g, '')); // Remove non-numeric characters and convert to float
+                var discountPercentage = 0.10; // 10% discount
+
+                if (discountCode === "fatima") {
+                    var discountedPrice = originalPrice - (originalPrice * discountPercentage);
+                    productPriceElement.text(discountedPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+                }
+            });
+
+           $(".add-to-cart-button").on("click", function () {
+                var id = $(this).data("id");
+
+                $("a.addToCart").click(function (e) {
+                    e.preventDefault();
+
+                    let ajaxDiv = $(this).parent().parent().find("div.ajaxbg");
+                    ajaxDiv.removeClass("d-none");
+                    let id = $(this).data("id");
+
+                    $.get('/cart/add/' + id, {}, function (data) {
+                        $("div.smallcart").html(data);
+                        ajaxDiv.find("img").addClass("d-none");
+                        ajaxDiv.find("p").removeClass("d-none");
+                        setTimeout(() => {
+                            ajaxDiv.animate({ opacity: 0 }, function () {
+                                $(this).addClass("d-none").fadeTo(.1, 1);
+                                $(this).find("img").removeClass("d-none");
+                                $(this).find("p").addClass("d-none");
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+    </script>
+   
+}
+

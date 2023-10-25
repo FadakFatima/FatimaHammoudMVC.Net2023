@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20230810203400_SecondCreate.cs" />
+    <Compile Remove="Migrations\20230810203400_SecondCreate.Designer.cs" />
+    <Compile Remove="Migrations\20230810233758_ThirdCreate.cs" />
+    <Compile Remove="Migrations\20230810233758_ThirdCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+    <Folder Include="wwwroot\media\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\metronic\js\custom\account\api-keys\api-keys.js" />
+    <None Include="wwwroot\metronic\js\custom\account\billing\general.js" />
+    <None Include="wwwroot\metronic\js\custom\account\referrals\referral-program.js" />
+    <None Include="wwwroot\metronic\js\custom\account\security\license-usage.js" />
+    <None Include="wwwroot\metronic\js\custom\account\security\security-summary.js" />
+    <None Include="wwwroot\metronic\js\custom\account\settings\deactivate-account.js" />
+    <None Include="wwwroot\metronic\js\custom\account\settings\profile-details.js" />
+    <None Include="wwwroot\metronic\js\custom\account\settings\signin-methods.js" />
+    <None Include="wwwroot\metronic\js\custom\apps\chat\chat.js" />
+    <None Include="wwwroot\metronic\js\custom\pages\user-profile\general.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\create-app.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\new-address.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\new-card.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\offer-a-deal\complete.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\offer-a-deal\details.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\offer-a-deal\finance.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\offer-a-deal\main.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\offer-a-deal\type.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\two-factor-authentication.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\upgrade-plan.js" />
+    <None Include="wwwroot\metronic\js\custom\utilities\modals\users-search.js" />
+    <None Include="wwwroot\metronic\js\custom\widgets.js" />
+    <None Include="wwwroot\metronic\js\scripts.bundle.js" />
+    <None Include="wwwroot\metronic\js\widgets.bundle.js" />
+    <None Include="wwwroot\metronic\plugins\custom\datatables\datatables.bundle.js" />
+    <None Include="wwwroot\metronic\plugins\global\fonts\%40fortawesome\fa-brands-400.woff2" />
+    <None Include="wwwroot\metronic\plugins\global\fonts\%40fortawesome\fa-regular-400.woff2" />
+    <None Include="wwwroot\metronic\plugins\global\fonts\%40fortawesome\fa-solid-900.woff2" />
+    <None Include="wwwroot\metronic\plugins\global\fonts\%40fortawesome\fa-v4compatibility.woff2" />
+    <None Include="wwwroot\metronic\plugins\global\fonts\bootstrap-icons\bootstrap-iconse52a.woff2" />
+    <None Include="wwwroot\metronic\plugins\global\plugins.bundle.js" />
+  </ItemGroup>
+
+</Project>

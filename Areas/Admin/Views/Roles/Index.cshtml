@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<div class="container" style="position: absolute; top: 100px">
+<h1 class="col-md-4 offset-md-2 ">Roles</h1>
+
+<p>
+    <a asp-action="Create" class="col-md-4 offset-md-2">Create New</a>
+</p>
+
+<table class="table col-md-4 offset-md-2" style="border: 2px solid black; text-align: center">
+    <thead style="color: #fff;padding: 8px; background-color: #888; border: 2px solid black">
+        <tr>
+            <th>Id</th>
+            <th>Role</th>
+            <th>Users</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style=" border: 2px solid black; padding: 8px">
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+                <td user-role="@role.Id"></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@role.Id">Edit</a> |
+                    <a class="confirmDeletion" asp-action="Delete" asp-route-id="@role.Id">Delete</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+@section Scripts{
+    <script>
+    $(function () {
+        if ($("a.confirmDeletion").length) {
+            $("a.confirmDeletion").click(() => {
+                if (!confirm("Confirm deletion")) return false;
+            });
+        }
+        if ($("div.alert.notification").length) {
+            setTimeout(() => {
+                $("div.alert.notification").fadeOut();
+            }, 2000);
+        }
+    });
+    </script>
+}
+
