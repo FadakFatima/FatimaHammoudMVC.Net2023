@@ -11,6 +11,7 @@
             <th>User Name</th>
             <th>Phone Number</th>
             <th>Address</th>
+            <th>Items</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -22,9 +23,15 @@
                 <td>@order.UserName</td>
                 <td>@order.PhoneNumber</td>
                 <td>@order.Address</td>
+                <td>@order.Items</td>
                 <td>
-                    <a class="confirmDeletion" asp-controller="Orders" asp-action="Delete" asp-route-id="@order.Id">Delete</a> |
-                    <a asp-action="Details" asp-route-id="@order.Id">Details</a> 
+                        <a class="details" asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id">
+                            <i class="fas fa-info-circle"></i>
+                        </a> |
+
+                        <a class="confirmDeletion" asp-controller="Orders" asp-action="Delete" asp-route-id="@order.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
                 </td>
             </tr>
         }

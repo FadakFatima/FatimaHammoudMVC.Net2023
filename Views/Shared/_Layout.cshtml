@@ -33,6 +33,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width:200px;
             border-radius: 10px;
+            z-index: 2;
         }
         .popup-card img {
             width: 100px;
@@ -50,6 +51,17 @@
         }
         .popup-card.show {
             display: block;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            color: #fff; /* Text color */
+            padding: 5px 0;
+            margin-top:10px;
+            border-top: 1px solid #fff;
         }
     </style>
 
@@ -146,9 +158,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
-            &copy; 2023 - CmsShoppingCart - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - CmsShoppingCart - <a asp-area="" asp-controller="Home" asp-action="Index">Privacy</a>
+
         </div>
     </footer>
 

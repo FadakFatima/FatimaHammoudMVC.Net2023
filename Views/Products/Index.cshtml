@@ -5,12 +5,21 @@
 <style>
     .custom-card {
         width: 300px;
-        height: 500px;
+        height: 350px;
         margin: 10px;
         padding: 10px;
         background-color: #fff;
         border: 1px solid black;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .custom-card:hover {
+        transform: scale(1.05); /* Enlarge the card on hover */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+            cursor: pointer;
+    }
+    
 </style>
 
 <h1 class="display-4 pb-5">All Products</h1>
@@ -39,7 +48,7 @@
                         </p>
 
                     </div>
-                    <img src="~/media/products/@item.Image" class="card-img-top" alt="" />
+                    <img src="~/media/products/@item.Image" class="card-img-top" alt="" style="width:150px; height:150px" />
                     <div class="card-body">
                         <form>
                             @if (item.OnSale)
@@ -62,9 +71,9 @@
                             <a asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id" class="gray-button rounded">
                                 Add to cart
                             </a>
-                            <button type="button" class="gray-button rounded discount-button" data-bs-toggle="modal" data-bs-target="#discountModal" data-product-id="@item.Id" data-product-price="@item.Price">
+                          <!-- <button type="button" class="gray-button rounded discount-button" data-bs-toggle="modal" data-bs-target="#discountModal" data-product-id="@item.Id" data-product-price="@item.Price">
                                 Discount
-                            </button>
+                              </button>-->
                         </p>
                     </div>
                 </div>

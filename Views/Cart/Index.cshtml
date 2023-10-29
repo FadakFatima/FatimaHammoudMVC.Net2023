@@ -14,7 +14,7 @@
             <h3 class="text-center" >Redirecting you to paypal...</h3>
             <img src="~/images/ajax.gif" />
         </div>
-        <table class="table">
+        <table class="table" style="z-index: 1;">
             <tr>
                 <th>Product</th>
                 <th>Quantity</th>
@@ -59,9 +59,11 @@
                     <a asp-action="Clear"
                        class="gray-button rounded" style="color:crimson">Clear Cart</a>
                     <br />
-                    <a href="#" class="gray-button rounded checkout mt-1" style="color:blue">Checkout</a>
-                    <form method="post" asp-controller="Orders" asp-action="PlaceOrder">
-                        <button type="submit" class="gray-button rounded mt-1" style="color:blue">Order Now</button>
+                    <form>
+                        <a href="#" class="gray-button rounded checkout mt-1" style="color:blue">Checkout</a>
+                        <form method="post" asp-controller="Orders" asp-action="PlaceOrder">
+                            <button type="submit" class="gray-button rounded mt-1" style="color:blue">Order Now</button>
+                        </form>
                     </form>
                 </td>
 
@@ -103,7 +105,7 @@ else
 {
     <h3 class="display-4 text-center">Your cart is empty.</h3>
 }
-<partial name="~/Views/Cart/_PaypalPartial.cshtml" for="CartItems" />
+<partial name="~/Views/Cart/_PaypalPartial.cshtml" for="CartItems" style=" display: none" />
 
 @section Scripts{
     <script>

@@ -2,6 +2,7 @@
 using CmsShoppingCart.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,6 +42,17 @@ namespace CmsShoppingCart.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Details(int id)
+        {
+            var orders =  _context.Orders.ToList();
+            if (orders == null)
+            {
+                return NotFound();
+            }
+            return View(orders);
+        }
+
+
     }
 
 }

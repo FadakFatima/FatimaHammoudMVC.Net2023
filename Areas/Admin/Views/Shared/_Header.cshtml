@@ -1,4 +1,47 @@
 ﻿<header>
+	<style>
+		.profile {
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.profile-info {
+			cursor: pointer;
+		}
+
+		.popup-card {
+			display: none;
+			position: fixed;
+			top: 100px;
+			right: 20px;
+			background-color: gray;
+			padding: 20px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			width: 200px;
+			border-radius: 10px;
+			z-index: 2;
+		}
+
+			.popup-card img {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				text-align:center;
+			}
+
+		.close-button {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			font-size: 20px;
+			color: black;
+		}
+
+		.popup-card.show {
+			display: block;
+		}
+	</style>
 	<div id="kt_app_header" class="app-header" style="background-color: black; color:white"
 		 data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 		<div class="app-container  container-fluid d-flex align-items-stretch justify-content-between " id="kt_app_header_container">
@@ -45,19 +88,53 @@
 							<!--begin:Menu link--><span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Products" asp-action="Index" style="color:white">Products</a><span class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
 						</div>
 					</div>
-					<a asp-area="" asp-controller="Products" asp-action="Index" class="btn btn-success" style="width:100px; position: absolute; right: 120px; top:18px">
-						Go Back
-					</a>
+					
 				</div>
-				<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
+				<div class="profile">
+					<img src="~/images/img.jpg" alt="Profile Picture" id="profile-picture" style="width:70px; height:70px; border-radius: 50%;  right: 120px">
+				</div>
+				<div class="popup-card" id="profile-card">
+					<div class="profile-info">
+						<span id="close-button" class="close-button">X</span>
+						<img src="~/images/img.jpg" alt="Profile Picture" style="width:100px; height:100px">
+						<h1>@User.Identity.Name</h1>
+						<ul>
+							<li>
+								<a asp-controller="Account" asp-action="Edit" class="btn">Account</a>
+							</li>
+							
+							<li>
+								<a asp-controller="Account" asp-action="Logout" class="btn ">
+									LogOut
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<!--<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
 					<span class="menu-link">
 						<a asp-area="" asp-controller="Account" asp-action="Logout" class="btn btn-danger" style="width:100px; position: absolute; right: 10px; top:5px">
 							@User.Identity.Name Log out
 						</a>
 						<span class="menu-arrow d-lg-none"></span>
-					</span><!--end:Menu link--><!--begin:Menu sub-->
-				</div>
+					</span>
+				</div>-->
 			</div>
 		</div>
 	</div>
 </header>
+<script>
+	const profilePicture = document.getElementById("profile-picture");
+	const profileCard = document.getElementById("profile-card");
+	const closeButton = document.getElementById("close-button");
+
+	profilePicture.addEventListener("click", function () {
+		profileCard.style.display = "block";
+	});
+
+	closeButton.addEventListener("click", function () {
+		profileCard.style.display = "none";
+	});
+
+</script>

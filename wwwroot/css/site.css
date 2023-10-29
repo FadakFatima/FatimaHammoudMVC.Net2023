@@ -59,21 +59,14 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height 
+  /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-image:url(../images/g.png);
   background-size:cover;
   background-repeat:no-repeat;
-  background-attachment:fixed;*/
-  background-color:gray;
+  background-attachment:fixed;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
+
 /*/////////////////////////////////////////////////////////*/
 table.sorting tr:not(.home) {
     cursor: pointer;

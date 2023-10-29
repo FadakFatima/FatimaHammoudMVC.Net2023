@@ -21,8 +21,9 @@
             <th>
                 Slug
             </th>
-            
-            <th></th>
+            <th>
+                Actions
+            </th>
         </tr>
     </thead>
     <tbody style=" border: 2px solid black; padding: 8px">
@@ -34,12 +35,18 @@
             <td>
                 @item.Slug
             </td>
-            <td> 
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <td>
+                        <a class="edit" asp-action="Edit" asp-route-id="@item.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>|
+                        <a class="details" asp-action="Details" asp-route-id="@item.Id">
+                            <i class="fas fa-info-circle"></i>
+                        </a> 
                     @if (item.Slug != "home")
                     {
-                       <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">
+                                | <i class="fas fa-trash"></i>
+                            </a>
                     }
             </td> 
         </tr>

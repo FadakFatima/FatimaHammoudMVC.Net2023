@@ -6,60 +6,71 @@
 
 <div class="container" style="position: absolute; top: 100px">
 
-<h1 class="col-md-4 offset-md-2">Products</h1>
+    <h1 class="col-md-4 offset-md-2">Products</h1>
 
-<p>
-    <a asp-action="Create" class="col-md-4 offset-md-2">Create New</a>
-</p>
-<table class="table col-md-4 offset-md-2" style="border: 2px solid black; text-align: center">
-    <thead style="color: #fff;padding: 8px; background-color: #888; border: 2px solid black">
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-               Category
-            </th>
-            <th>
-                Image
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody style=" border: 2px solid black; padding: 8px">
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Price.ToString("C2")
-            </td>
-            <td>
-                @item.Category.Name
-            </td>
-            <td>
-                 <img src="~/media/products/@item.Image" width="100" alt="" />
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                <a asp-action="SalePrice" asp-controller="products" asp-route-id="@item.Id">Sale</a>
-                    
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<div class="d-flex w-100 justify-content-center">
-<pagination page-count="@ViewBag.TotalPages" page-target="/admin/products" page-number="@ViewBag.PageNumber" page-range="@ViewBag.PageRange"></pagination>
+    <p>
+        <a asp-action="Create" class="col-md-4 offset-md-2">Create New</a>
+    </p>
+    <table class="table col-md-4 offset-md-2" style="border: 2px solid black; text-align: center">
+        <thead style="color: #fff;padding: 8px; background-color: #888; border: 2px solid black">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                   Category
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody style=" border: 2px solid black; padding: 8px">
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Price.ToString("C2")
+                </td>
+                <td>
+                    @item.Category.Name
+                </td>
+                <td>
+                     <img src="~/media/products/@item.Image" width="100" alt="" />
+                </td>
+                <td>
+                        <a class="edit" asp-action="Edit" asp-route-id="@item.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>|
+                        <a class="details" asp-action="Details" asp-route-id="@item.Id">
+                            <i class="fas fa-info-circle"></i>
+                        </a> |
+                        <a class="sales" asp-action="SalePrice" asp-controller="products" asp-route-id="@item.Id">
+                            <i class="fas fa-dollar-sign"></i>
+                        </a>|
+                        <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div class="d-flex w-100 justify-content-center" style="align-items:center; justify-content:center">
+    <pagination page-count="@ViewBag.TotalPages" 
+    page-target="/admin/products" page-number="@ViewBag.PageNumber"
+    page-range="@ViewBag.PageRange"></pagination>
+    </div>
 </div>
 
-</div>
 @section Scripts{
     <script>
         $(function () {

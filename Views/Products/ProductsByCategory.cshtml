@@ -6,11 +6,19 @@
 <style>
     .custom-card {
         width: 300px;
-        height: 500px;
+        height: 350px;
         margin: 5px;
         padding: 5px;
         background-color: #fff;
         border: 1px solid black;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .custom-card:hover {
+        transform: scale(1.05); /* Enlarge the card on hover */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        cursor: pointer;
     }
 </style>
 <h1 class="display-4 pb-5">@ViewBag.CategoryName</h1>
@@ -39,7 +47,7 @@
                         </p>
 
                     </div>
-                    <img src="~/media/products/@item.Image" class="card-img-top" alt="" />
+                    <img src="~/media/products/@item.Image" class="card-img-top" alt="" style="width:150px; height:150px" />
                     <div class="card-body">
                         <form>
                             @if (item.OnSale)
@@ -60,9 +68,9 @@
                             <a asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id" class="gray-button rounded">
                                 Add to cart
                             </a>
-                            <button type="button" class="gray-button rounded" data-bs-toggle="modal" data-bs-target="#discountModal">
+                           <!-- <button type="button" class="gray-button rounded" data-bs-toggle="modal" data-bs-target="#discountModal">
                                 Discount
-                            </button>
+                             </button>--->
                         </p>
                     </div>
                 </div>
@@ -89,7 +97,16 @@
                     </div>
                 </form>
             </div>
-        }
+        } <table>
+            <thead>
+                <tr>  <br />  </tr>
+            </thead>
+            <tbody>
+                <td>
+                    <br />
+                </td>
+            </tbody>
+        </table>
     </div>
 
     @if (ViewBag.TotalPages > 1)
@@ -98,8 +115,11 @@
             <pagination page-count="@ViewBag.TotalPages"
                         page-target="/products/@ViewBag.CategorySlug"
                         page-number="@ViewBag.PageNumber"
-                        page-range="@ViewBag.PageRange"></pagination>
+                        page-range="@ViewBag.PageRange">
+            </pagination>
         </div>
+       
+
     }
 
 </div>

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\ajax.gif"
     },
     {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\delete.png",
+      "PackagePath": "staticwebassets\\images\\delete.png"
+    },
+    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\g.png",
       "PackagePath": "staticwebassets\\images\\g.png"
     },
@@ -22417,12 +22421,20 @@
       "PackagePath": "staticwebassets\\media\\products\\28824dc4-c2de-48e2-9915-042645224031_red t-shirt.jpg"
     },
     {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\2f8809e3-2afc-400c-b576-6aa337e51377_blue.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\2f8809e3-2afc-400c-b576-6aa337e51377_blue.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\3209596f-e666-4c7c-90f8-02ab694067d9_yellow t-shirt.jpg",
       "PackagePath": "staticwebassets\\media\\products\\3209596f-e666-4c7c-90f8-02ab694067d9_yellow t-shirt.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\37d16b63-03ac-4843-871f-cc312dba3cb2_white t-shirt.jpg",
       "PackagePath": "staticwebassets\\media\\products\\37d16b63-03ac-4843-871f-cc312dba3cb2_white t-shirt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\3bdfa3d6-cc60-4621-a4ba-ccd8499bdc5a_white2.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\3bdfa3d6-cc60-4621-a4ba-ccd8499bdc5a_white2.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\3cb7fcb2-52cc-41bc-bef7-1245895df10d_yellow t-shirt.jpg",
@@ -22445,8 +22457,16 @@
       "PackagePath": "staticwebassets\\media\\products\\5867d99d-7c80-460f-925e-0de5e2d6bdf5_red grape.jpg"
     },
     {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\5b877366-451f-4451-86d5-ddc7066d9df2_black.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\5b877366-451f-4451-86d5-ddc7066d9df2_black.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\5eeed4a4-9f1d-43e0-8abe-d257bdf2d8bd_noimage.png",
       "PackagePath": "staticwebassets\\media\\products\\5eeed4a4-9f1d-43e0-8abe-d257bdf2d8bd_noimage.png"
+    },
+    {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\6525a854-3ec3-4537-914e-56e9b22c0d00_yellows.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\6525a854-3ec3-4537-914e-56e9b22c0d00_yellows.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\766918c4-0865-4325-be9d-5c7d2c5e0b3e_apple.jpg",
