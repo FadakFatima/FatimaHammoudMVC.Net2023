@@ -42,7 +42,7 @@
 			display: block;
 		}
 	</style>
-	<div id="kt_app_header" class="app-header" style="background-color: black; color:white"
+	<div id="kt_app_header" class="app-header" style="background-color:black; color: white"
 		 data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
 		<div class="app-container  container-fluid d-flex align-items-stretch justify-content-between " id="kt_app_header_container">
 			<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
@@ -76,16 +76,13 @@
 						 data-kt-menu="true">
 						
 						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-						<span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Pages" asp-action="Index" style="color:white">Pages</a><span class="menu-arrow d-lg-none"></span></span>
-							<!--end:Menu sub-->
+							<span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Pages" asp-action="Index" style=" color: white,; font: bold">Pages</a></span>
 						</div>
-						<!--end:Menu item--><!--begin:Menu item-->
-						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-here-bg menu-lg-down-accordion me-0 me-lg-2"><div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-								<!--begin:Menu link--><span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Categories" asp-action="Index" style="color:white">Categories</a><span class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
+						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+							<span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Categories" asp-action="Index" style=" color: white; font: bold">Categories</a></span>
 						</div>
-						</div>
-						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-							<!--begin:Menu link--><span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Products" asp-action="Index" style="color:white">Products</a><span class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
+						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+							<span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Products" asp-action="Index" style=" color: white; font: bold">Products</a></span>
 						</div>
 					</div>
 					
@@ -100,11 +97,11 @@
 						<h1>@User.Identity.Name</h1>
 						<ul>
 							<li>
-								<a asp-controller="Account" asp-action="Edit" class="btn">Account</a>
+								<a asp-area="" asp-controller="Account" asp-action="Edit" class="btn">Account</a>
 							</li>
 							
 							<li>
-								<a asp-controller="Account" asp-action="Logout" class="btn ">
+								<a asp-area="" asp-controller="Account" asp-action="Logout" class="btn ">
 									LogOut
 								</a>
 							</li>

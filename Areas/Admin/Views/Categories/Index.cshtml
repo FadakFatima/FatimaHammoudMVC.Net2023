@@ -50,16 +50,6 @@
 
 @section Scripts {
     <script>
-      $("table#categories tbody").sortable({
-          items: "tr:not(.home)",
-          placeholder: "ui-state-highlight",
-          update: function(){
-              let ids = $("table#categories tbody").sortable("serialize");
-                let url = "/admin/categories/reorder";
-
-              $.post(url, ids, function() {});
-          }
-      })
         $(function () {
             if ($("a.confirmDeletion").length) {
                 $("a.confirmDeletion").click(() => {
@@ -72,5 +62,15 @@
                 }, 2000);
             }
         });
+      $("table#categories tbody").sortable({
+          items: "tr:not(.home)",
+          placeholder: "ui-state-highlight",
+          update: function(){
+              let ids = $("table#categories tbody").sortable("serialize");
+                let url = "/admin/categories/reorder";
+
+              $.post(url, ids, function() {});
+          }
+      })
     </script>
 }

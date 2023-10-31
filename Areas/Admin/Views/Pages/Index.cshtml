@@ -56,16 +56,6 @@
 </div>
 @section Scripts {
     <script>
-      $("table#pages tbody").sortable({
-          items: "tr:not(.home)",
-          placeholder: "ui-state-highlight",
-          update: function(){
-              let ids = $("table#pages tbody").sortable("serialize");
-              let url = "/admin/pages/reorder";
-
-              $.post(url, ids, function() {});
-          }
-      })
         $(function () {
             if ($("a.confirmDeletion").length) {
                 $("a.confirmDeletion").click(() => {
@@ -78,6 +68,17 @@
                 }, 2000);
             }
         });
+        $("table#pages tbody").sortable({
+          items: "tr:not(.home)",
+          placeholder: "ui-state-highlight",
+          update: function(){
+              let ids = $("table#pages tbody").sortable("serialize");
+              let url = "/admin/pages/reorder";
+
+              $.post(url, ids, function() {});
+          }
+        })
+       
     </script>
 }
 

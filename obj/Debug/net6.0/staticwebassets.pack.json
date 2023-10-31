@@ -25,16 +25,8 @@
       "PackagePath": "staticwebassets\\images\\g.png"
     },
     {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\gray.jpg",
-      "PackagePath": "staticwebassets\\images\\gray.jpg"
-    },
-    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\img.jpg",
       "PackagePath": "staticwebassets\\images\\img.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\logo.png",
-      "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\logo2.png",
@@ -22631,66 +22623,6 @@
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\js\\widgets.bundle.js",
       "PackagePath": "staticwebassets\\metronic\\js\\widgets.bundle.js"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-1.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-11.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-11.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-12.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-12.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-13.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-13.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-14.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-14.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-2.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-20.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-20.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-21.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-21.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-23.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-23.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-25.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-25.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-3.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-4.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-5.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-6.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\avatars\\300-9.jpg",
-      "PackagePath": "staticwebassets\\metronic\\media\\avatars\\300-9.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\media\\illustrations\\sketchy-1\\1.png",

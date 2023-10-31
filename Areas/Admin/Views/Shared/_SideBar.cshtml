@@ -1,5 +1,20 @@
 ﻿<section>
-	<div id="kt_app_sidebar" class="app-sidebar flex-column" style="background-color: black"
+	<style>
+		.sidebar-toggle {
+			position: absolute;
+			top: 50%;
+			left: 240px; /* Adjust the position as needed */
+			transform: translateY(-50%);
+			cursor: pointer;
+			font-size: 24px;
+		}
+
+		/* Hide the arrow when the sidebar is collapsed */
+		.app-sidebar.collapsed .sidebar-toggle i {
+			transform: rotate(180deg); /* Rotate the arrow icon when the sidebar is collapsed */
+		}
+	</style>
+	<div id="kt_app_sidebar" class="app-sidebar flex-column" style="background-color: black; transition: left 0.3s"
 		 data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
 		<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 			<div id="kt_app_sidebar_toggle"
@@ -10,12 +25,19 @@
 				data-kt-toggle-name="app-sidebar-minimize">
 			<i class="ki-duotone ki-black-left-line fs-3 rotate-180"><span class="path1"></span><span class="path2"></span></i>
 			</div>
-			<span class="menu-link">
-				<span class="menu-title btn btn-light" style="width:200px; font-size:larger">
+			<span class="menu-title btn btn-light" style="width:200px; font-size:larger">
 				<a asp-area="" asp-controller="Products" asp-action="Index">Shop Bag</a>
-				</span>
-			<span class="menu-arrow "></span></span>
+			</span>
+			<div class="sidebar-toggle" id="sidebarToggle">
+				<i class="fas fa-chevron-left"></i> <!-- Initially show the left arrow when the sidebar is expanded -->
+			</div>
 		</div>
+		<div class="menu-item pt-5">
+			<!--begin:Menu content-->
+			<div class="menu-content"><span class="menu-heading fw-bold text-uppercase fs-7">Adminstrator Controlls</span></div>
+			<!--end:Menu content-->
+		</div>
+
 		<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
 			<!--begin:Menu link--><span class="menu-link"><a class="menu-title" asp-area="Admin" asp-controller="Users" asp-action="Index" style="color:white; font-size:large">Users</a><span class="menu-arrow d-lg-none"></span></span><!--end:Menu link--><!--begin:Menu sub-->
 		</div>
@@ -47,3 +69,24 @@
 		
 	</div>
 </section>
+<script>
+	// JavaScript to toggle the sidebar
+	const sidebarToggle = document.getElementById('sidebarToggle');
+	const appSidebar = document.querySelector('.app-sidebar');
+
+	let isCollapsed = false;
+
+	sidebarToggle.addEventListener('click', function () {
+		isCollapsed = !isCollapsed;
+		if (isCollapsed) {
+			sidebarToggle.innerHTML = '<i class="fas fa-chevron-right"></i>'; // Use a right arrow when expanding
+			appSidebar.classList.add('collapsed');
+		} else {
+			sidebarToggle.innerHTML = '<i class="fas fa-chevron-left"></i>'; // Use a left arrow when collapsing
+			appSidebar.classList.remove('collapsed');
+		}
+	});
+
+
+
+</script>

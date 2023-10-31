@@ -42,15 +42,7 @@ namespace CmsShoppingCart.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
-        public async Task<IActionResult> Details(int id)
-        {
-            var orders =  _context.Orders.ToList();
-            if (orders == null)
-            {
-                return NotFound();
-            }
-            return View(orders);
-        }
+      
 
 
     }
