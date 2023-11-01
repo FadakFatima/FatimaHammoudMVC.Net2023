@@ -3,16 +3,23 @@
 @{
     ViewData["Title"] = "Order OverView";
 }
-
+<style>
+    .card{
+        margin: 10px;
+        padding: 10px;
+        align-items:center;
+        right:-100px;
+    }
+</style>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <div class="row">
     <div class="col-md-5">
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <div class="alert alert-success">
-                @TempData["SuccessMessage"]
-            </div>
-        }
-        <form asp-action="PlaceOrder">
+        <form asp-action="PlaceOrder" class="card">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
@@ -36,7 +43,7 @@
                 <span asp-validation-for="Items" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
+                <input type="submit" value="Submit" class="gray-button rounded" />
             </div>
         </form>
     </div>

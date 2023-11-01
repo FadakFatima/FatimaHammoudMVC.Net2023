@@ -142,57 +142,6 @@
             });
         });
 
-        $(document).ready(function () {
-            $(".discount-button").on("click", function () {
-                var productId = $(this).data("product-id");
-                var productPrice = $(this).data("product-price");
-
-                // Update the modal content with the correct product details
-                $("#product-id").val(productId);
-                $("#product-price").val(productPrice);
-                $("#product-price-display").text(productPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
-            });
-        });
-
-        $(function () {
-            $(".apply-discount-button").on("click", function () {
-                var discountCode = $("#discount-code-input").val();
-                var productPriceElement = $(this).parent().find(".product-price");
-                var originalPrice = parseFloat(productPriceElement.text().replace(/\D/g, '')); // Remove non-numeric characters and convert to float
-                var discountPercentage = 0.10; // 10% discount
-
-                if (discountCode === "fatima") {
-                    var discountedPrice = originalPrice - (originalPrice * discountPercentage);
-                    productPriceElement.text(discountedPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
-                }
-            });
-
-           $(".add-to-cart-button").on("click", function () {
-                var id = $(this).data("id");
-
-                $("a.addToCart").click(function (e) {
-                    e.preventDefault();
-
-                    let ajaxDiv = $(this).parent().parent().find("div.ajaxbg");
-                    ajaxDiv.removeClass("d-none");
-                    let id = $(this).data("id");
-
-                    $.get('/cart/add/' + id, {}, function (data) {
-                        $("div.smallcart").html(data);
-                        ajaxDiv.find("img").addClass("d-none");
-                        ajaxDiv.find("p").removeClass("d-none");
-                        setTimeout(() => {
-                            ajaxDiv.animate({ opacity: 0 }, function () {
-                                $(this).addClass("d-none").fadeTo(.1, 1);
-                                $(this).find("img").removeClass("d-none");
-                                $(this).find("p").addClass("d-none");
-                            });
-                        });
-                    });
-                });
-            });
-        });
-
     </script>
    
 }

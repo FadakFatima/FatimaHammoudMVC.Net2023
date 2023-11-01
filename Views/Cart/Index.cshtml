@@ -5,9 +5,9 @@
 }
 
 
-
 @if (Model.CartItems.Count > 0)
 {
+
     <h1>Cart OverView</h1>
     <div class="cartWrapper">
         <div class="cartbg d-none">
@@ -48,23 +48,21 @@
             }
 
             <tr>
-                <td class="text-right" colspan="4">
+                <td class="text-right" colspan="5">
                     Grand Total:
                     @Model.GrandTotal.ToString("C2")
                 </td>
             </tr>
 
             <tr>
-                <td class="text-right" colspan="4">
+                <td class="text-right" colspan="5">
                     <a asp-action="Clear"
                        class="gray-button rounded" style="color:crimson">Clear Cart</a>
                     <br />
-                    <form>
                         <a href="#" class="gray-button rounded checkout mt-1" style="color:blue">Checkout</a>
                         <form method="post" asp-controller="Orders" asp-action="PlaceOrder">
                             <button type="submit" class="gray-button rounded mt-1" style="color:blue">Order Now</button>
                         </form>
-                    </form>
                 </td>
 
             </tr>

@@ -21,10 +21,6 @@
       "PackagePath": "staticwebassets\\images\\delete.png"
     },
     {
-      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\g.png",
-      "PackagePath": "staticwebassets\\images\\g.png"
-    },
-    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\images\\img.jpg",
       "PackagePath": "staticwebassets\\images\\img.jpg"
     },
@@ -22441,6 +22437,10 @@
       "PackagePath": "staticwebassets\\media\\products\\4052d781-a80e-4122-b63d-1445a7b09c91_yellows.jpg"
     },
     {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\557b4e3d-a12d-48e2-ada0-dc63f92084a7_grapes.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\557b4e3d-a12d-48e2-ada0-dc63f92084a7_grapes.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\563f6961-7019-4f5b-bfc6-c0270900356d_Mango.jpg",
       "PackagePath": "staticwebassets\\media\\products\\563f6961-7019-4f5b-bfc6-c0270900356d_Mango.jpg"
     },
@@ -22465,6 +22465,10 @@
       "PackagePath": "staticwebassets\\media\\products\\766918c4-0865-4325-be9d-5c7d2c5e0b3e_apple.jpg"
     },
     {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\76f7d89a-568e-4ff1-9528-71968d2fa719_blue.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\76f7d89a-568e-4ff1-9528-71968d2fa719_blue.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\77918bff-f943-4c03-9064-955d67b94f3a_t-shirt.jpg",
       "PackagePath": "staticwebassets\\media\\products\\77918bff-f943-4c03-9064-955d67b94f3a_t-shirt.jpg"
     },
@@ -22475,6 +22479,10 @@
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\8aa9ef9a-0eba-448e-a7f3-eaeb2ec45de3_kiwi.jpg",
       "PackagePath": "staticwebassets\\media\\products\\8aa9ef9a-0eba-448e-a7f3-eaeb2ec45de3_kiwi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\8e7a3289-999e-4982-8864-272bf9eb098a_red grape.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\8e7a3289-999e-4982-8864-272bf9eb098a_red grape.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\985c0b18-440a-41b6-a6f6-73e9988e1e15_white.jpg",
@@ -22491,6 +22499,10 @@
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\b2c23777-1ab0-4e28-9725-c14bb2126b67_white t-shirt.jpg",
       "PackagePath": "staticwebassets\\media\\products\\b2c23777-1ab0-4e28-9725-c14bb2126b67_white t-shirt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\b74973b5-a786-45bc-96e7-2874d5226452_Mango.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\b74973b5-a786-45bc-96e7-2874d5226452_Mango.jpg"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\media\\products\\bf2dcf97-2eac-46b7-9a29-268aa057c04e_apple.jpg",
@@ -22619,6 +22631,10 @@
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\js\\scripts.bundle.js",
       "PackagePath": "staticwebassets\\metronic\\js\\scripts.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\js\\site.js",
+      "PackagePath": "staticwebassets\\metronic\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\HP i5\\Desktop\\.Net2023FatimaHammoud-master\\CmsShoppingCart\\wwwroot\\metronic\\js\\widgets.bundle.js",

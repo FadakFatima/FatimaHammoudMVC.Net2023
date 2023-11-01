@@ -23,15 +23,15 @@ namespace CmsShoppingCart.Controllers
                 _context.SaveChanges();
 
               
-                return RedirectToAction("order", new { username = order.UserName });
-                TempData["SuccessMessage"] = "Order placed successfully."; // Set success message in TempData
+                return RedirectToAction("Order", new { username = order.UserName });
+               // TempData["SuccessMessage"] = "Order placed successfully."; // Set success message in TempData
 
             }
 
             return View("~/Cart/Index");
         }
 
-        public IActionResult order(string username)
+        public IActionResult Order(string username)
         {
             var name = _context.Orders.FirstOrDefault(o => o.UserName == username);
             return View(name);
